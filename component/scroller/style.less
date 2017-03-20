@@ -1,0 +1,27 @@
+@import '../../style/stander.less';
+
+.wrc-scroller{
+    height: 200px;
+    background-color: #0fc;
+    overflow: hidden;
+
+
+    .wrc-scroller-inner {
+
+        width: 1000px;
+        height: 100%;
+        
+        &.wrc-scroller-animate {
+            transition: transform .4s ease;
+        }
+
+        .wrc-scroller-item {
+            display: inline-block;
+            height: 200px;
+            width: 100px;
+            background-color: #dac;
+            float: left;
+            margin-right: 10px;
+        }
+    }
+}

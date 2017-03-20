@@ -1,0 +1,46 @@
+@import "../../style/stander.less";
+
+.wrc-passwd {
+    position: relative;
+    display: flex;
+    width: 90%;
+    margin: 0 5%;
+
+    .wrc-passwd-input {
+        position: absolute;
+        height: 40px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        z-index: @level2;
+        width: 200%;
+        margin-left: -100%;
+    }
+
+    .wrc-passwd-dot {
+        position: relative;
+        display: inline-block;
+        flex: 1;
+        height: 50px;
+        border: 1px solid #ccc;
+        border-right: none;
+        
+        &:last-of-type {
+            border-right: 1px solid #ccc;
+        }
+
+        .wrc-passwd-dot-active {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 50%;
+            width: 16px;
+            height: 16px;
+            background-color: #111;
+            border-radius: 16px;
+            top: 50%;
+            margin-top: -8px;
+            margin-right: -8px;
+        }
+    }
+}

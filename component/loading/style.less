@@ -1,0 +1,42 @@
+@import "../../style/stander.less";
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.wrc-loading{
+
+    left: 25%;
+    top: 40%;
+    padding: 10px;
+    width: 50%;
+    z-index: @level3;
+    background-color: @transparent-black;
+    text-align: center;
+    position: fixed;
+    border-radius: @radius;
+	color: #fff;
+
+	&.wrc-loading-hide {
+		display: none;
+	}
+
+    .wrc-loading-spin {
+		border-radius: 50%;
+		margin: 0 auto;
+		width: @base-line-height;
+		height: @base-line-height;
+		border: .25rem solid @off-white;
+		border-top-color: @white;
+		animation: spin @spin-duration infinite linear;
+	}
+
+	.wrc-loading-label {
+		padding-top: 10px;
+	}
+}

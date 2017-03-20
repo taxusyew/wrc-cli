@@ -1,0 +1,23 @@
+@import "../../style/stander.less";
+
+
+.wrc-fixedbar-section:after {
+    content: " "; 
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.wrc-fixedbar {
+    background-color: #ccc;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+
+    &.wrc-fixedbar-fixed {
+        z-index: @level2;
+    }
+
+    
+}

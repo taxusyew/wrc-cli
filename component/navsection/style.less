@@ -1,0 +1,35 @@
+@import "../../style/stander.less";
+
+.wrc-navsection {
+    background-color: #fff;
+    border-top: 1px solid @bordercolor;
+    border-bottom: 1px solid @bordercolor;
+
+    .wrc-navitem {
+        padding-left: @padding-left;
+        line-height: @navitem-line-height;
+
+        &:not(:last-child)::after {
+            content: " ";
+            display: block;
+            height: 1px;
+            background: #ccc;
+        }
+
+        &::before {
+
+            content: " ";
+            display: inline-block;
+            transform: rotate(45deg);
+            height: 6px;
+            width: 6px;
+            border-width: 2px 2px 0 0;
+            border-color: #c8c8cd;
+            border-style: solid;
+            float: right;
+            margin-right: @margin-right;
+            margin-top: @arrow-margin-top;
+           
+        }
+    }
+}

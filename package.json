@@ -1,0 +1,17 @@
+{
+  "name": "wrc-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "bin": {
+    "wrc": "./bin/index.js"
+  },
+  "author": "taxusyew@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "mkdirp": "^0.5.1",
+    "ncp": "^2.0.0"
+  }
+}

@@ -1,17 +1,18 @@
 @-webkit-keyframes bounceIn { 
-    0% {opacity: 0; -webkit-transform: scale(.5); transform: scale(.5) }
-    100% {opacity: 1; -webkit-transform: scale(1); transform: scale(1) }
+    0% {opacity: 0; -webkit-transform: scale(.5); transform: scale(.5);-webkit-transform: translateX(-50%);transform: translateX(-50%); }
+    100% {opacity: 1; -webkit-transform: scale(1); transform: scale(1);-webkit-transform: translateX(-50%);transform: translateX(-50%); }
 }
 
 @-webkit-keyframes bounceOut { 
-    0% {opacity: 1; -webkit-transform: scale(1); transform: scale(1) }
-    100% {opacity: 0; -webkit-transform: scale(.5); transform: scale(.5) }
+    0% {opacity: 1; -webkit-transform: scale(1); transform: scale(1);     -webkit-transform: translateX(-50%);transform: translateX(-50%);}
+    100% {opacity: 0; -webkit-transform: scale(.5); transform: scale(.5); -webkit-transform: translateX(-50%);transform: translateX(-50%);}
 }
 
 .wrc-toast{
-	position: fixed;
+    position: fixed;
     z-index: 3;
-    left: 30%;
+    left: 50%;
+    transform: translateX(5%);
     background: rgba(40, 40, 40, 0.75);
     text-align: center;
     border-radius: 5px;

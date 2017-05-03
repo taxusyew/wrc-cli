@@ -23,12 +23,12 @@ export default class Dialog extends React.Component {
         let footerDom = '';
 
         if ( footer) {
-            footerDom = footer.map((x, index)=> (<span key={index} className='wrc-dialog-btn' onClick={x.onClick}>{x.label}</span>))
+            footerDom = footer.map((x, index)=> (<span key={index} className='wrc-dialog-btn' style={{color: x.color || '#6492E3'}} onClick={x.onClick}>{x.label}</span>))
         }
 
         return (
             <Mask isShow={show} >
-                <div className='wrc-dialog'>
+                <div className={'wrc-dialog '+ className || ''}>
                     <div className={clsTitle}>
                         {title}
                     </div>

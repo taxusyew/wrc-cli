@@ -4,6 +4,13 @@ import './style.less';
 
 export default class Button extends React.Component {
 
+    handleClick = () => {
+        if (this.props.disabled) {
+            return
+        }
+        this.props.onClick && this.props.onClick();
+    }
+
     render () {
         
         // 后期根据不同平台得到不同的 DOM 元素
@@ -21,7 +28,7 @@ export default class Button extends React.Component {
 	    });
 
 		return (
-	        <Component className={cls} onClick={onClick}>{children}</Component>
+	        <Component className={cls} onClick={this.handleClick}>{children}</Component>
 	    );
 
     }

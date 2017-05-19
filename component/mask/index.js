@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {Component, PropTypes}  from 'react';
 import classNames from 'classnames';
 import './style.less'
 
-export default class Mask extends React.Component {
+export default class Mask extends Component {
 
-    handleClick () {
+    handleClick (e) {
+        e.stopPropagation();
+        e.preventDefault();
         // TODO 如何自动隐藏比较好
         if ( this.props.onClick ) {
             this.props.onClick();
@@ -20,7 +22,7 @@ export default class Mask extends React.Component {
         });
 
         return (
-            <div className={cls} onClick={this.handleClick.bind(this)}>
+            <div className={cls} onClick={this.handleClick.bind(this)} onTouchMove={(e)=>e.preventDefault()}>
                 {children}
             </div>
         );

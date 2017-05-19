@@ -1,7 +1,8 @@
 import React, { Component, PropTypes }  from 'react';
 import './style.less';
 
-class TripleListitem extends Component {
+
+export default class TripleListitem extends Component {
     
     constructor(props) {
         super(props);
@@ -22,19 +23,18 @@ class TripleListitem extends Component {
     }
 }
 
-TripleListitem.left = ({children}) => {
-    return (<div className="stk-triplelistitem-left">{children}</div>)
+TripleListitem.left = ({children, className}) => {
+    return (<div className={"stk-triplelistitem-left " + className}>{children}</div>)
 
 }
 
 
-TripleListitem.center = ({children}) => {
-    return (<div className="stk-triplelistitem-center">{children}</div>)
+TripleListitem.center = ({children, className}) => {
+    return (<div className={"stk-triplelistitem-center" + className}>{children}</div>)
 
 }
 
-TripleListitem.right = ({children}) => {
-    return (<div className="stk-triplelistitem-right">{children}</div>)
+TripleListitem.right = ({children, className}) => {
+    return (<div className={"stk-triplelistitem-right" + className}>{children}</div>)
 
 }
-export default TripleListitem;

@@ -22,9 +22,16 @@ wrc -l
 
 # Changelog
 
+## 1.0.2
+1. 新增创建组件方法； 
+2. 新增展示组件列表方法； 
+3. 修改 toast、mask、triplelistitem 等组件  
+
 ## 1.0.1
 toast 居中样式
+
 button disabled 时，不可点
+
 dialog 头部样式，同时接受用户传入的 className
 
 ## 1.0.0

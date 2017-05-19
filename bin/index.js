@@ -12,6 +12,7 @@ program
     .version('0.0.1')
     .option('-c, --create [comp]', 'create component')
     .option('-i, --install [comp]', 'install component')
+    .option('-l, --list', 'list components')
     .parse(process.argv);
 
 /*
@@ -108,7 +109,7 @@ export default class ${comp} extends Component {
 }
 `;
 
-var lessTmp = ``;
+    var lessTmp = ``;
 
     // 解析文件夹地址
     target_folder_path = path.resolve(process.cwd(), './app/component/' + comp.toLowerCase());
@@ -135,6 +136,32 @@ var lessTmp = ``;
     });
 }
 
+
+/*
+ * 展示组件
+ * 展示用户已经有的组件列表
+ */
+function list_component() {
+    var component_folder_path = path.resolve(__dirname, '../component/');
+    var res = [],
+        count = 0;
+        files = fs.readdirSync(component_folder_path);
+
+    files.forEach(function(file) {
+        var pathname = component_folder_path + '/' + file,
+            stat = fs.lstatSync(pathname);
+
+        if (stat.isDirectory()) {
+            res.push(file);
+            count ++;
+        } 
+    });
+
+    console.log(res.join('\n'));
+    console.log('\n------ total ', count, '  components ------');
+
+}
+
 /*
  * 分解处理用户命令
  */
@@ -142,6 +169,8 @@ if (program.install) {
     install_component(program.install);
 } else if (program.create) {
     create_component(program.create);
+} else if (program.list) {
+    list_component();
 } else {
     MSG_FATAL('not install');
 }
